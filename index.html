@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My JAANU ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Indie+Flower&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Indie Flower', cursive;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ffd6e7 0%, transparent 25%),
+        radial-gradient(circle at 80% 80%, #ffc1d9 0%, transparent 25%),
+        linear-gradient(135deg, #ffdde8, #fff0f5, #ffd0df);
+}
+
+/* Floating hearts */
+
+.heart {
+    position: fixed;
+    color: rgba(255, 65, 120, 0.5);
+    font-size: 22px;
+    animation: float 6s linear infinite;
+    pointer-events: none;
+}
+
+.heart:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(3) {
+    left: 70%;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(4) {
+    left: 88%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0% {
+        bottom: -50px;
+        opacity: 0;
+        transform: translateX(0) rotate(0deg);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 110%;
+        opacity: 0;
+        transform: translateX(50px) rotate(360deg);
+    }
+}
+
+/* Card */
+
+.card {
+    position: relative;
+
+    width: 330px;
+    height: 460px;
+
+    background: #fff7fa;
+
+    transform-style: preserve-3d;
+    perspective: 2000px;
+
+    box-shadow:
+        0 25px 60px rgba(110, 20, 50, 0.25);
+
+    border-radius: 4px;
+
+    transition: 1.2s ease;
+
+    cursor: pointer;
+}
+
+/* Card shadow when opened */
+
+.card.open {
+    transform:
+        translateX(80px)
+        perspective(2000px)
+        rotateY(-8deg)
+        rotateX(2deg);
+}
+
+/* Front cover */
+
+.card .cover {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5f8f,
+            #ff86ad,
+            #ff4779
+        );
+
+    transform-origin: left;
+    transform-style: preserve-3d;
+
+    transition: 1.2s ease;
+
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 4px;
+
+    box-shadow:
+        inset -15px 0 30px rgba(120, 0, 40, 0.2);
+}
+
+/* Cover pattern */
+
+.cover::before {
+    content: "♥";
+
+    position: absolute;
+
+    font-size: 280px;
+
+    color: rgba(255,255,255,0.08);
+
+    transform: rotate(-15deg);
+}
+
+/* Open cover */
+
+.card.open .cover {
+    transform: rotateY(-145deg);
+}
+
+/* Front text */
+
+.cover-content {
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: 2;
+    transform: translateZ(30px);
+}
+
+.cover-content .small {
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.cover-content h1 {
+    margin: 15px 0 5px;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 70px;
+
+    text-shadow:
+        3px 4px 8px rgba(100,0,30,0.3);
+}
+
+.cover-content .line {
+    width: 120px;
+    height: 2px;
+
+    margin: 12px auto;
+
+    background: white;
+}
+
+.cover-content p {
+    font-size: 19px;
+}
+
+/* Inside card */
+
+.inside {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 30px 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffafa,
+            #fff1f5
+        );
+
+    color: #592238;
+
+    overflow: hidden;
+}
+
+/* Decorative border */
+
+.inside::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 13px;
+
+    border: 2px solid rgba(255, 95, 143, 0.25);
+
+    pointer-events: none;
+}
+
+.inside h2 {
+    position: relative;
+
+    text-align: center;
+
+    margin: 10px 0 5px;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 42px;
+
+    color: #e83e70;
+}
+
+.subtitle {
+    position: relative;
+
+    text-align: center;
+
+    font-size: 17px;
+
+    color: #a34c68;
+
+    margin-bottom: 20px;
+}
+
+/* Message */
+
+.message {
+    position: relative;
+
+    font-size: 17px;
+
+    line-height: 1.55;
+
+    text-align: center;
+
+    padding: 0 12px;
+}
+
+.message .highlight {
+    color: #e83e70;
+
+    font-size: 22px;
+
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Signature */
+
+.signature {
+    position: absolute;
+
+    bottom: 28px;
+
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #c52e5f;
+}
+
+.signature .love {
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 29px;
+}
+
+.signature .heart-big {
+    font-size: 35px;
+
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+/* Click hint */
+
+.hint {
+    position: fixed;
+
+    bottom: 25px;
+
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #9e4563;
+
+    font-size: 16px;
+
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+    .card {
+        width: 290px;
+        height: 420px;
+    }
+
+    .cover-content h1 {
+        font-size: 60px;
+    }
+
+    .message {
+        font-size: 15px;
+    }
+
+    .inside h2 {
+        font-size: 37px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+
+<div class="heart">♥</div>
+<div class="heart">♡</div>
+<div class="heart">♥</div>
+<div class="heart">♡</div>
+
+<!-- CARD -->
+
+<div class="card" id="card">
+
+    <!-- Inside -->
+
+    <div class="inside">
+
+        <h2>For My JAANU ❤️</h2>
+
+        <div class="subtitle">
+            A little piece of my heart...
+        </div>
+
+        <div class="message">
+
+            <p>
+                JAANU, I don't know if words can ever explain
+                what you mean to me.
+            </p>
+
+            <p>
+                But if I had to choose one person who makes
+                my ordinary days feel special,
+                <span class="highlight">it would always be you.</span>
+            </p>
+
+            <p>
+                Your smile makes my day brighter.
+                Your voice makes everything feel better.
+                And just knowing that you're in my life
+                makes me feel incredibly lucky.
+            </p>
+
+            <p>
+                I don't promise that every day will be perfect...
+                but I promise I'll always try to make
+                you feel loved, valued, and special.
+            </p>
+
+            <p>
+                <span class="highlight">
+                    You're not just someone I love...
+                    you're my favorite person. ❤️
+                </span>
+            </p>
+
+        </div>
+
+        <div class="signature">
+
+            <div class="love">
+                Forever yours,
+            </div>
+
+            <div class="heart-big">
+                ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Front Cover -->
+
+    <div class="cover">
+
+        <div class="cover-content">
+
+            <div class="small">
+                OPEN THIS
+            </div>
+
+            <h1>JAANU</h1>
+
+            <div class="line"></div>
+
+            <p>
+                Something from my heart ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="hint">
+    ✨ Click the card to open your surprise ✨
+</div>
+
+
+<script>
+
+const card = document.getElementById("card");
+
+card.addEventListener("click", () => {
+
+    card.classList.toggle("open");
+
+});
+
+</script>
+
+</body>
+</html>
