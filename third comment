@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My JAANU ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ffb7cf55, transparent 30%),
+        radial-gradient(circle at 80% 80%, #ff6f9f44, transparent 30%),
+        linear-gradient(135deg, #180810, #350f20, #16070e);
+
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================
+   BACKGROUND HEARTS
+========================= */
+
+.hearts span {
+    position: fixed;
+    bottom: -50px;
+
+    color: #ff7fa7;
+    font-size: 20px;
+
+    opacity: 0;
+
+    animation: rise 8s linear infinite;
+
+    filter: drop-shadow(0 0 8px #ff4f87);
+}
+
+.hearts span:nth-child(1) {
+    left: 8%;
+    animation-delay: 0s;
+}
+
+.hearts span:nth-child(2) {
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.hearts span:nth-child(3) {
+    left: 35%;
+    animation-delay: 4s;
+}
+
+.hearts span:nth-child(4) {
+    left: 55%;
+    animation-delay: 1s;
+}
+
+.hearts span:nth-child(5) {
+    left: 72%;
+    animation-delay: 3s;
+}
+
+.hearts span:nth-child(6) {
+    left: 90%;
+    animation-delay: 5s;
+}
+
+@keyframes rise {
+
+    0% {
+        transform: translateY(0) scale(.5) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: .8;
+    }
+
+    80% {
+        opacity: .5;
+    }
+
+    100% {
+        transform: translateY(-110vh) scale(1.3) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    width: min(90vw, 420px);
+    height: min(88vh, 590px);
+
+    position: relative;
+
+    perspective: 1800px;
+
+    cursor: pointer;
+
+    filter:
+        drop-shadow(0 30px 45px rgba(0,0,0,.5));
+
+    transition: transform .5s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+
+/* =========================
+   INSIDE
+========================= */
+
+.inside {
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 18px;
+
+    padding: clamp(28px, 6vw, 45px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffafa,
+            #fff0f5
+        );
+
+    color: #4a1829;
+
+    overflow: hidden;
+}
+
+
+/* Inner border */
+
+.inside::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 15px;
+
+    border: 1px solid #d78ba5;
+
+    border-radius: 12px;
+
+    opacity: .6;
+}
+
+.inside::after {
+    content: "♥";
+
+    position: absolute;
+
+    right: -35px;
+    bottom: -55px;
+
+    font-size: 220px;
+
+    color: #e94f7c10;
+
+    transform: rotate(-15deg);
+}
+
+
+/* =========================
+   TOP
+========================= */
+
+.top {
+    position: relative;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+.top .tiny {
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(9px, 2vw, 11px);
+
+    letter-spacing: 4px;
+
+    color: #a4546e;
+
+    text-transform: uppercase;
+}
+
+.top h1 {
+    margin-top: 8px;
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(38px, 10vw, 58px);
+
+    line-height: 1;
+
+    color: #d83c69;
+
+    text-shadow:
+        0 4px 12px rgba(216,60,105,.15);
+}
+
+.top .line {
+    width: 80px;
+    height: 1px;
+
+    margin: 12px auto;
+
+    background: #d83c69;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+    position: relative;
+
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(16px, 3.9vw, 19px);
+
+    line-height: 1.45;
+
+    font-weight: 500;
+
+    max-width: 330px;
+
+    margin: 0 auto;
+}
+
+.message p {
+    margin-bottom: 13px;
+}
+
+.message .special {
+    display: block;
+
+    margin: 8px 0;
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(22px, 5.5vw, 29px);
+
+    line-height: 1.1;
+
+    color: #d93668;
+}
+
+
+/* =========================
+   BOTTOM
+========================= */
+
+.bottom {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 30px;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+.bottom .small {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 17px;
+
+    color: #875066;
+}
+
+.bottom .name {
+    margin-top: 2px;
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 30px;
+
+    color: #d83c69;
+}
+
+.bottom .heart {
+    display: inline-block;
+
+    margin-top: 3px;
+
+    font-size: 25px;
+
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    20% {
+        transform: scale(1.2);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================
+   FRONT COVER
+========================= */
+
+.cover {
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 18px;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #ff6f9d,
+            #d83264 45%,
+            #8f173e 100%
+        );
+
+    transform-origin: left center;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 1.3s cubic-bezier(.77,0,.18,1);
+
+    z-index: 5;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    box-shadow:
+        inset 0 0 60px rgba(0,0,0,.15);
+}
+
+
+/* Cover glow */
+
+.cover::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    background: #ffb4cdaa;
+
+    filter: blur(70px);
+
+    opacity: .35;
+}
+
+
+/* Cover border */
+
+.cover::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    border: 1px solid #ffffff66;
+
+    border-radius: 13px;
+}
+
+
+/* =========================
+   COVER CONTENT
+========================= */
+
+.cover-content {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    color: white;
+
+    padding: 30px;
+}
+
+.cover-content .small {
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    opacity: .85;
+}
+
+.cover-content h2 {
+    margin-top: 18px;
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(58px, 16vw, 82px);
+
+    line-height: .9;
+
+    text-shadow:
+        0 5px 15px rgba(70,0,20,.3);
+}
+
+.cover-content .divider {
+    width: 70px;
+    height: 1px;
+
+    margin: 20px auto;
+
+    background: #ffffffaa;
+}
+
+.cover-content p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 19px;
+
+    letter-spacing: 1px;
+}
+
+
+/* Heart on cover */
+
+.cover-heart {
+    margin-top: 22px;
+
+    font-size: 30px;
+
+    animation: heartbeat 1.3s infinite;
+}
+
+
+/* =========================
+   OPEN STATE
+========================= */
+
+.card.open .cover {
+    transform: rotateY(-155deg);
+}
+
+
+/* =========================
+   HINT
+========================= */
+
+.hint {
+    position: fixed;
+
+    bottom: 18px;
+
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    color: #ffc1d5;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    opacity: .75;
+
+    animation: hintPulse 2s infinite;
+}
+
+@keyframes hintPulse {
+
+    0%,100% {
+        opacity: .4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 450px) {
+
+    .card {
+        width: 88vw;
+        height: 82vh;
+    }
+
+    .inside {
+        padding: 28px 24px;
+    }
+
+    .message {
+        font-size: 15.5px;
+        line-height: 1.4;
+    }
+
+    .message p {
+        margin-bottom: 11px;
+    }
+
+    .bottom {
+        bottom: 24px;
+    }
+}
+
+
+/* Small height phones */
+
+@media (max-height: 650px) {
+
+    .card {
+        height: 88vh;
+    }
+
+    .inside {
+        padding-top: 22px;
+    }
+
+    .top {
+        margin-bottom: 10px;
+    }
+
+    .message {
+        font-size: 14px;
+        line-height: 1.32;
+    }
+
+    .message p {
+        margin-bottom: 7px;
+    }
+
+    .bottom {
+        bottom: 17px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- Floating hearts -->
+
+<div class="hearts">
+
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+
+</div>
+
+
+<!-- =========================
+     CARD
+========================= -->
+
+<div class="card" id="card">
+
+
+    <!-- =====================
+         INSIDE
+    ====================== -->
+
+    <div class="inside">
+
+        <div class="top">
+
+            <div class="tiny">
+                A little message from my heart
+            </div>
+
+            <h1>JAANU</h1>
+
+            <div class="line"></div>
+
+        </div>
+
+
+        <div class="message">
+
+            <p>
+                There are so many things I want
+                to tell you...
+            </p>
+
+            <p>
+                But somehow, whenever I try to
+                put my feelings into words,
+                <span class="special">
+                    words never feel enough.
+                </span>
+            </p>
+
+            <p>
+                You came into my life and slowly
+                became a beautiful part of it.
+                Your smile can change my whole day,
+                and your presence makes everything
+                feel a little more special.
+            </p>
+
+            <p>
+                I don't know what the future holds,
+                but I know one thing...
+            </p>
+
+            <p>
+                <span class="special">
+                    I want you to be a part of it. ❤️
+                </span>
+            </p>
+
+        </div>
+
+
+        <div class="bottom">
+
+            <div class="small">
+                With all my heart,
+            </div>
+
+            <div class="name">
+                Yours, always ❤️
+            </div>
+
+            <div class="heart">
+                ♥
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================
+         FRONT
+    ====================== -->
+
+    <div class="cover">
+
+        <div class="cover-content">
+
+            <div class="small">
+                FOR SOMEONE SPECIAL
+            </div>
+
+            <h2>
+                JAANU
+            </h2>
+
+            <div class="divider"></div>
+
+            <p>
+                I made something<br>
+                just for you...
+            </p>
+
+            <div class="cover-heart">
+                ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="hint">
+    Tap the card to open it ✨
+</div>
+
+
+<script>
+
+const card = document.getElementById("card");
+
+card.addEventListener("click", function () {
+
+    this.classList.toggle("open");
+
+});
+
+</script>
+
+</body>
+</html>
